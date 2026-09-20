@@ -1,0 +1,41 @@
+{
+  "name": "dsh-select-to-chat",
+  "version": "0.1.0",
+  "description": "Codex-style 划词添加到对话 for DSH web: select text -> floating comment box -> numbered badges -> annotation list above the composer -> quote + comment appended into the composer. Pure client plugin, no build step.",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-conversation"
+      ]
+    }
+  },
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "dsh-plugin",
+    "codex",
+    "selection",
+    "annotation",
+    "划词"
+  ],
+  "author": "dsh-select-to-chat contributors",
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "license": "MIT"
+}

@@ -1,0 +1,6 @@
+# 本包作为 profile bundle 挂载时（dsh.profile.bundles 路线）由此文件贡献 loader 条目。
+# 当前部署采用的是「profile 补丁层」注册路线（见 ~/.dsh/profiles/web/cordis.patch.yml），
+# 因此本文件仅作为备用路线保留，避免两处重复 insert 造成重复条目。
+- insert:
+    - id: select-to-chat
+      name: dsh-select-to-chat
