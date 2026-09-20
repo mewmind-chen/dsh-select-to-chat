@@ -9,7 +9,8 @@
 ## 功能
 
 - **划词即批注**：在对话区（或页面任意非输入区域）选中一段文本，原地弹出评论框；
-  自绘选区高亮，输入框抢焦点也不丢失高亮。
+  **弹窗不抢焦点**——原生选区保留，划词后照常 Ctrl+C / 右键复制；点入评论框才进入
+  输入模式（此时由插件自绘高亮保持视觉）。
 - **编号角标**：每条批注在选区右上角生成蓝色编号角标（1、2、3…），数量不限，
   随滚动跟随文本位置；点角标直接跳到清单对应行。
 - **批注清单**：输入框上方显示「N 条注释」面板，每条含「所选文本 / 用户评论」，
@@ -34,7 +35,7 @@
 ### 方式一：dsh CLI（推荐）
 
 ```bash
-dsh plugin --profile web add github:<owner>/dsh-select-to-chat
+dsh plugin --profile web add github:mewmind-chen/dsh-select-to-chat
 # 然后重启 dsh web（也可以在 dshmarket 设置页点「重启」）
 ```
 
@@ -48,7 +49,7 @@ dsh plugin --profile web add github:<owner>/dsh-select-to-chat
 ### 方式三：手动
 
 ```bash
-git clone https://github.com/<owner>/dsh-select-to-chat.git
+git clone https://github.com/mewmind-chen/dsh-select-to-chat.git
 cd dsh-select-to-chat && bash install.sh
 # install.sh 会把包放进 ~/.dsh/profiles/web/node_modules 并登记 bundles
 # 重启 dsh web 生效
@@ -70,7 +71,10 @@ git pull && bash install.sh
 3. 可以继续划选添加更多条（这就是它和"复制粘贴"的差别——多段意见一次带走）；
 4. 正常发送消息。
 
-键盘：`Enter` 添加 · `Esc` 取消。
+键盘：`Enter` 添加 · `Esc` 关闭。
+
+复制：划词后只要不点进评论框，选区就是原生选区，`Ctrl+C` / 右键复制照常可用；
+点进评论框后按 `Ctrl+C` 也会自动复制划词原文（v0.1.1 起）。
 
 ## 工作原理
 
@@ -93,7 +97,7 @@ A DeepSeek Harness web plugin that brings Codex-style "select text → add to
 conversation" annotations: select any text, attach an optional comment,
 collect numbered highlights in a list above the composer, and send them all
 with your next message. Pure client plugin, no build step. See 安装 above —
-`dsh plugin --profile web add github:<owner>/dsh-select-to-chat` then restart.
+`dsh plugin --profile web add github:mewmind-chen/dsh-select-to-chat` then restart.
 
 ## License
 
