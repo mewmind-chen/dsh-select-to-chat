@@ -1,6 +1,6 @@
 {
   "name": "dsh-select-to-chat",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "Codex-style 划词添加到对话 for DSH web: select text -> floating comment box -> numbered badges -> annotation list above the composer -> quote + comment appended into the composer. Pure client plugin, no build step.",
   "type": "module",
   "main": "lib/index.js",
